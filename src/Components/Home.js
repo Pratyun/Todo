@@ -1,14 +1,6 @@
-import './App.css'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-import Todos from "./Components/Todos";
+import Todos from "./Todos";
 import React, {useState} from 'react';
-import Addtodo from './Components/Addtodo';
-import About from './Components/About'
-import Home from './Components/Home'
-import {
-  BrowserRouter as Router, Route, Routes
-} from "react-router-dom";
+import Addtodo from './Addtodo';
 
 
 function BasicExample() {
@@ -56,15 +48,10 @@ function BasicExample() {
   ]);
   return (
     <>
-    <Router>
-    <Header title= 'TODO'/>
-      <Routes>
-        <Route path='home' element={<Home/>}/>
-        <Route path='about' element={<About/>}/>
-      </Routes>
-    </Router>
-    <Footer/>
+    <Addtodo addTodo={addTodo}/>
+    <Todos todos={todos} onDelete={onDelete}/>
     </>
   );
 }
+
 export default BasicExample;
